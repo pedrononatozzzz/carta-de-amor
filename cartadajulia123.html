@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carta de Amor</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .envelope {
+            width: 300px;
+            height: 200px;
+            background-color: #f0e9e9;
+            border: 6px solid #acacac;
+            border-top-color: #fff;
+            position: relative;
+            cursor: pointer;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .heart {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 120px;
+            color: red;
+            opacity: 0.7;
+        }
+        .paper {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #fff;
+            padding: 20px;
+            width: calc(100% - 40px);
+            height: calc(100% - 40px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            display: none;
+            overflow-y: auto;
+            text-align: justify;
+            line-height: 1.6;
+        }
+        .opened .paper {
+            display: block;
+        }
+        .signature {
+            position: absolute;
+            bottom: 10px;
+            right: 20px;
+            font-style: italic;
+            font-size: 14px;
+            text-align: center;
+        }
+        img {
+            width: 60px;
+            height: auto;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="envelope" onclick="toggleEnvelope()">
+        <div class="heart">&hearts;</div>
+        <img src="https://emojicombos.com/emoji/unicode-13.0/1f4e9.svg" alt="Carta">
+        <div class="paper">
+            <p>Eu estou completamente apaixonado por você desde o dia em que te vi pela primeira vez. Parece que foi ontem quando te levei para sair pela primeira vez e a gente riu tanto que fiquei apaixonado pelo seu sorriso. Também me lembro do nosso primeiro beijo e abraço que foi atrapalhado pelo Uber. Foi incrível, até mesmo quando tocou a trilha sonora da nossa vida.</p>
+        </div>
+        <div class="signature">
+            De: Pedro<br>
+            Para: Julia
+        </div>
+    </div>
+
+    <script>
+        function toggleEnvelope() {
+            var envelope = document.querySelector('.envelope');
+            envelope.classList.toggle('opened');
+        }
+    </script>
+</body>
+</html>
